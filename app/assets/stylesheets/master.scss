@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css?family=Satisfy&display=swap');
 
 .navbar-inverse .navbar-brand {
-  color: #DE781F;
+  color: #eb1338;
   font-family: 'Satisfy', cursive;
   font-weight: 600;
   font-size: 32px;
@@ -14,3 +14,33 @@
   box-shadow: 0px 1px 3px #2a2a2a;
 }
 
+.hero {
+  background: image_url('hero.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 370px;
+  box-shadow: 0px 3px 8px #c6c6c6;
+}
+
+h1, h2, h3,h4,h5, h6, .navbar {
+  margin: 0;
+}
+
+.frosty {
+  background: rgba(0, 0, 0, 0.35);
+  color: white;
+}
+
+.frosty h2 {
+  font-family: 'Satisfy', cursive;
+  font-weight:200;
+  text-shadow: rgba(0,0,0,0.45) 1px 1px;
+}
+
+.frosty h5 {
+  font-family: "Helvetica Neue", Helvetica;
+  font-weight: 100;
+  text-shadow: rgba(0, 0, 0, 0.4) 1px 1px;
+}
