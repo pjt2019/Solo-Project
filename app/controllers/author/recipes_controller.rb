@@ -5,9 +5,9 @@ class Author::RecipesController < ApplicationController
   end
 
   def create
-    @course = current_user.recipes.create(recipe_parama)
-    redirect_to author_recipe_path(@course)
-end
+    @recipe = current_user.recipes.create(recipe_params)
+    redirect_to author_recipe_path(@recipe)
+  end
 
 def show
   @recipe = Recipe.find(params[:id])
