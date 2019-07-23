@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :recipes, only: [:index, :show]
   namespace :author do
     resources :recipes, only: [:new, :create, :show] do
-      resources categories, only: [:new, :create]
+      resources :categories, only: [:new, :create, :show]
     end
   end
 end
