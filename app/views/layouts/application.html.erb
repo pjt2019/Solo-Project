@@ -19,9 +19,13 @@
       <a class="navbar-brand" href="#">Yummies</a>
 
       <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-        <ul class="navbar-nav mr-auto mt-2 mt-md-0">       
+
+        <ul class="navbar-nav mr-auto mt-2 mt-md-0">
           <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
+            <%= link_to 'See All Recipes', recipes_path, class: 'nav-link' %>
+          </li>
+          <li class="nav-item">
+            <%= link_to 'My recipebook', '#', class: 'nav-link' %>
           </li>
         </ul>
 
