@@ -14,7 +14,11 @@
     <div class="row feature text-center">
     <div class="col-12 col-sm">
       <img class="catagory" src="#">  
-      <h5>Breakfast</h5>
+      <p>
+      <% @categories.each do |c| %>
+      <h5><%= link_to catagory.title, category_path(c) %></h5>
+      <% end %>
+      </p>
     </div>
 
     <div class="col-12 col-sm">
@@ -27,3 +31,4 @@
       <h5>Pasta</h5>
     </div>
 </div>
+
