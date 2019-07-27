@@ -10,7 +10,7 @@ class CategoriesController < ApplicationController
   end
 
   def create
-    @category = current_user.categories.create(categories_params)
+    @category = current_user.categories.create(category_params)
     redirect_to root_path 
   end
 
