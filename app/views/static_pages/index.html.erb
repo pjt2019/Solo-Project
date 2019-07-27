@@ -12,23 +12,11 @@
     <br />
     
     <div class="row feature text-center">
-    <div class="col-12 col-sm">
-      <img class="catagory" src="#">  
-      <p>
       <% @categories.each do |c| %>
-      <h5><%= link_to catagory.title, category_path(c) %></h5>
+    <div class="col-12 col-sm">
+      <%= link_to category_path(c) do %>
+      <img class="catagory" src="#">        
+      <h5><%= c.title %></h5>
       <% end %>
-      </p>
     </div>
-
-    <div class="col-12 col-sm">
-      <img class="catagory" src="#">  
-      <h5>Dessert</h5>
-    </div>
-
-    <div class="col-12 col-sm">
-      <img class="catagory" src="#">  
-      <h5>Pasta</h5>
-    </div>
-</div>
-
+    <% end %>
