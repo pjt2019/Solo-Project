@@ -2,6 +2,13 @@
 <div class="booyah-box col-10 offset-1">
   <h1 class="text-center"><%= @recipe.title %></h1>
   <br />
+  <p class="text-center"><h5>Description:</h5><%= @recipe.description %></p>
+  <br />
+  <p class="text-center"><h5>Ingredient:</h5><%= @recipe.ingredient %></p>
+  <br />
+  <p class="text-center"><h5>Instruction:</h5><%= @recipe.instruction %></p>
+  <br />
+  <br />
   <div class="col-sm-4 col-12 text-center">
   <%= link_to 'Button', '#', class: 'btn btn-primary btn-large' %>
 </div>

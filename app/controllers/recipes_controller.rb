@@ -13,6 +13,11 @@ class RecipesController < ApplicationController
     @recipe = Recipe.find(params[:id])
   end
 
+  def create
+    @recipe = current_user.categories.recipes.create(recipe_params)
+    redirect_to recipes_path(@recipe)
+  end
+
 
   private
 
@@ -20,3 +25,4 @@ class RecipesController < ApplicationController
     params.require(:recipe).permit(:title, :description, :ingredient, :instruction)
   end
 end
+
