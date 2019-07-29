@@ -1,6 +1,6 @@
 <br />
 <div class="booyah-box col-10 offset-1">
-<p><%= @category.title %></p>
+<h1><%= @category.title %></h1>
 <p>
   <% @category.recipes.each do |r| %>
     <p><%= link_to r.title, recipe_path(r) %></p>

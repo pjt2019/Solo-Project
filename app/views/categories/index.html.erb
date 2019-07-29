@@ -1,4 +1,17 @@
 <br />
-<% @categories.each do |c| %>
-<h2 class="text-center"><%= category.title %></h2>
+<div class="booyah-box col-10 offset-1">
+<h1 class="text-center">Recipes</h1>
 <br />
+
+<div class="row feature text-center">
+      <% @categories.each do |c| %>
+    <div class="col-12 col-sm">
+      <%= link_to category_path(c) do %>
+      <img class="catagory" src="#">        
+      <h5><%= c.title %></h5>
+      <% end %>
+      <br />
+    </div>
+    <% end %>
+</div>
+
