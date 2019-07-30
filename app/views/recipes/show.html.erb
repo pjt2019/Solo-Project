@@ -2,6 +2,16 @@
 <div class="booyah-box col-10 offset-1">
   <h1 class="text-center"><%= @recipe.title %></h1>
   <br />
+
+  <div class="row">
+    <% @recipe.photos.each do |photo| %>
+        <%= image_tag photo.picture.url, class: 'col-md-4 img-fluid' %>
+        <%= photo.caption %>
+    <% end %>
+  </div>
+  <br />
+
+
   <p class="text-center"><h5>Description:</h5><%= @recipe.description %></p>
   <br />
   <p class="text-center"><h5>Ingredient:</h5><%= @recipe.ingredient %></p>

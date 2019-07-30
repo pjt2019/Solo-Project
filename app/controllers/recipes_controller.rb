@@ -11,10 +11,14 @@ class RecipesController < ApplicationController
 
   def show
     @recipe = Recipe.find(params[:id])
+    @photo = Photo.new
   end
 
   def create
-    @recipe = current_user.categories.recipes.create(recipe_params)
+    @recipe = Recipe.create(recipe_params)
+    current_user.recipes << @recipe
+    #@category = Category.find(params[:categories])
+    #@category.recipes << @recipe
     redirect_to recipes_path(@recipe)
   end
 
