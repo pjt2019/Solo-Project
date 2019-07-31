@@ -7,6 +7,13 @@
 <% @recipes.each do |recipe| %>
 <h2 class="text-center"><%= recipe.title %></h2>
 <br />
+
+<div class="text-center">
+  <%= photo_tag @recipes.photo, class: 'img-fluid' %>
+</div>
+<br />
+<br />
+
 <div class="row">
 <div class="col-sm-8 col-12">
   <%= recipe.description %>
