@@ -1,12 +1,11 @@
 <br />
 <div class="booyah-box col-10 offset-1">
   <h1 class="text-center"><%= @recipe.title %></h1>
-  <%= photo_tag @recipes.photo, class: 'img-fluid' %>
   <br />
 
   <div class="row">
     <% @recipe.photos.each do |photo| %>
-        <%= image_tag photo.picture.url, class: 'col-md-4 img-fluid' %>
+        <%= photo_tag @recipes.photo, class: 'col-md-4 img-fluid' %>
         <%= photo.caption %>
     <% end %>
   </div>
