@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
   root 'static_pages#index'
-  resources :recipes #, only: [:index, :show]
+  resources :recipes do #, only: [:index, :show]
+    resources :photos, only: :create
+  end
   resources :categories #, only: [:new, :create, :show]
 end

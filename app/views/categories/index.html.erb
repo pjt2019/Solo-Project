@@ -7,7 +7,12 @@
       <% @categories.each do |c| %>
     <div class="col-12 col-sm">
       <%= link_to category_path(c) do %>
-      <img class="catagory" src="#">        
+      
+    <div class="text-center">
+    <%= image_tag category.photo.to_s, class: 'col-md-4 image' %>
+    </div>
+    <br />
+
       <h5><%= c.title %></h5>
       <% end %>
       <br />
