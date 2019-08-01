@@ -15,7 +15,7 @@
       <% @categories.each do |c| %>
     <div class="col-12 col-md-4">
       <%= link_to category_path(c) do %>
-      <%= image_tag c.photo.to_s, class: 'image' %>            
+      <%= image_tag c.photo.to_s, class: 'image' %>
       <h5><%= c.title %></h5>
       <% end %>
       <br />

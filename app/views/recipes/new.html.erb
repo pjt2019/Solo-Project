@@ -6,6 +6,7 @@
     <%= f.input :description %>
     <%= f.input :ingredient %>
     <%= f.input :instruction %>
+    <%= f.select :categories, Category.all.map { |c| [c.title, c.id] }, {}, { :multiple => true, :size => Category.all.size} %>
 
     <%= f.input :photo %>    
     <%= f.submit "Add a Photo", class: 'btn btn-primary' %>
