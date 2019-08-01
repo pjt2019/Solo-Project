@@ -16,10 +16,15 @@ class RecipesController < ApplicationController
 
   def create
     @recipe = Recipe.create(recipe_params)
+    categories = params[:recipe][:categories]
+    categories.each do |c|
+      @recipe.categories << Category.find(c) unless c.blank?
+    end
+    @recipe.save
     current_user.recipes << @recipe
-    #@category = Category.find(params[:categories])
-    #@category.recipes << @recipe
     redirect_to recipes_path(@recipe)
+    #current_user.recipes << @recipe
+    #redirect_to recipes_path(@recipe)
   end
 
 

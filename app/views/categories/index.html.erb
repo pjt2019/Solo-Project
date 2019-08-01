@@ -5,18 +5,15 @@
 
 <div class="row feature text-center">
       <% @categories.each do |c| %>
-    <div class="col-12 col-sm">
+    <div class="col-12 col-md-4">
+      <%= image_tag c.photo.to_s, class: 'image' %>
       <%= link_to category_path(c) do %>
-      
-    <div class="text-center">
-    <%= image_tag category.photo.to_s, class: 'col-md-4 image' %>
-    </div>
-    <br />
-
       <h5><%= c.title %></h5>
       <% end %>
       <br />
     </div>
     <% end %>
 </div>
+      
+      
 
