@@ -3,13 +3,10 @@
   <h1 class="text-center"><%= @recipe.title %></h1>
   <br />
 
-  <div class="row">
-    <% @recipe.photos.each do |photo| %>
-        <%= photo_tag @recipes.photo, class: 'col-md-4 img-fluid' %>
-        <%= photo.caption %>
-    <% end %>
-  </div>
-  <br />
+  <div class="text-center">
+  <%= image_tag @recipe.photo.to_s, class: 'col-md-4 image' %>
+</div>
+<br />
 
 
   <p class="text-center"><h5>Description:</h5><%= @recipe.description %></p>

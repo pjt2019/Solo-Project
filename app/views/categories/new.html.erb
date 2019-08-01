@@ -4,6 +4,12 @@
   <%= simple_form_for @category, url: categories_path do |f| %>
     <%= f.input :title %>
     <br />
+
+    <%= f.input :photo %>    
+    <%= f.submit "Add a Photo", class: 'btn btn-primary' %>
+    <br />
+    <br />
+
     <%= f.submit "Create" %>
     <br />
     <br />
