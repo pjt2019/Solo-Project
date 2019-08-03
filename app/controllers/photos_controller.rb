@@ -3,7 +3,7 @@ class PhotosController < ApplicationController
     @recipes = Recipe.find(params[:recipe_id])
   end
 
-  Private
+  private
 
   def photo_params
     params.require(:photo).permit(:picture)
