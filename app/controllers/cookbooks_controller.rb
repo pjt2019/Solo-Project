@@ -7,3 +7,4 @@ class CookbooksController < ApplicationController
     @category = Category.find(params[:id])
     @photo = Photo.new
   end
+end
