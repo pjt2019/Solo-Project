@@ -1,0 +1,17 @@
+<br />
+<div class="booyah-box col-10 offset-1">
+<h1 class="text-center"><%= @category.title %></h1>
+<br />
+
+
+<div class="row feature text-center">
+  <% @category.recipes.each do |r| %>
+  <div class="col-12 col-md-4">
+    <%= link_to recipe_path(r) do %>
+    <%= image_tag r.photo.to_s, class: 'image' %>
+    <p><%= link_to r.title %></p>
+    <% end %>
+    <br />
+    </div>
+  <% end %>  
+</div>
