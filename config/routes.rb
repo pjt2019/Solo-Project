@@ -5,4 +5,5 @@ Rails.application.routes.draw do
     resources :photos, only: :create
   end
   resources :categories #, only: [:new, :create, :show]
+  resources :cookbooks
 end
