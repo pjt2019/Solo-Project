@@ -4,11 +4,9 @@
   <br />
 
   <div class="text-center">
-  <%= image_tag @recipe.photo.to_s, class: 'image' %>
-</div>
-<br />
-
-
+    <%= image_tag @recipe.photo.to_s, class: 'image' %>
+  </div>
+  <br />
   <p class="text-center"><h5>Description:</h5><%= @recipe.description %></p>
   <br />
   <p class="text-center"><h5>Ingredient:</h5><%= @recipe.ingredient %></p>
@@ -16,7 +14,11 @@
   <p class="text-center"><h5>Instruction:</h5><%= @recipe.instruction %></p>
   <br />
   <br />
-  <div class="col-sm-4 col-12 text-center">
-  <%= link_to 'Save to Cookbook', '#', class: 'btn btn-primary btn-large' %>
-</div>
+  <%if current_user %>
+    <% unless current_user.recipes.include?(@recipe) %>
+      <div class="col-sm-4 col-12 text-center">
+        <%= link_to 'Save to Cookbook', '#', class: 'btn btn-primary btn-large' %>
+      </div>
+    <% end %>
+  <% end %>
 </div>

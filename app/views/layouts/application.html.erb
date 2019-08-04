@@ -25,18 +25,22 @@
           <li class="nav-item">
             <%= link_to 'All Recipes', categories_path, class: 'nav-link' %>
           </li>
+
+          <% if current_user %>
           <li class="nav-item">
             <%= link_to 'My Cookbook', '#', class: 'nav-link' %>
           </li>
 
-          </li>
-          <li class="nav-item">
-            <%= link_to 'Add Category', new_category_path, class: 'nav-link' %>
-          </li>
-          </li>
-          <li class="nav-item">
-            <%= link_to 'Add Recipe', new_recipe_path, class: 'nav-link' %>
-          </li>
+            <% if current_user.is_author %>
+              <li class="nav-item">
+                <%= link_to 'Add Category', new_category_path, class: 'nav-link' %>
+              </li>
+          
+              <li class="nav-item">
+                <%= link_to 'Add Recipe', new_recipe_path, class: 'nav-link' %>
+              </li>
+            <% end %>
+          <% end %>
         </ul>
 
         <ul class="navbar-nav">
@@ -67,6 +71,10 @@
     <% if alert.present? %>
     <p class="alert alert-danger"><%= alert %></p>
     <% end %>
+    <% if flash[:error].present? %>
+    <p class="alert alert-danger"><%= flash[:error] %></p>
+    <% end %>
+
 
 
     <%= yield %>
