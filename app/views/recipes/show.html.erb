@@ -17,7 +17,7 @@
   <%if current_user %>
     <% unless current_user.recipes.include?(@recipe) %>
       <div class="col-sm-4 col-12 text-center">
-        <%= link_to 'Save to Cookbook', '#', class: 'btn btn-primary btn-large' %>
+        <%= link_to 'Save to Cookbook', cookbooks_path(@cookbook), class: 'btn btn-primary btn-large' %>
       </div>
     <% end %>
   <% end %>
