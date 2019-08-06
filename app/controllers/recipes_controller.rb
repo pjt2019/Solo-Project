@@ -23,7 +23,7 @@ class RecipesController < ApplicationController
     end
     @recipe.save
     current_user.recipes << @recipe
-    redirect_to recipes_path(@recipe)
+    redirect_to categories_path(@category)
     #current_user.recipes << @recipe
     #redirect_to recipes_path(@recipe)
   end
