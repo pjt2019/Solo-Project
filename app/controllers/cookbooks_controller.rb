@@ -15,9 +15,13 @@ class CookbooksController < ApplicationController
   end
 
   def add_recipe
-    @ecipe = params
-  end
+    current_user.cookbook.recipes << Recipe.find(params[:recipe])
+    redirect_to cookbook_path(current_user.cookbook.recipes.last.categories.last)
 
+    #Find the recipe from the URL
+    #add the recipe to the cookbook
+    #redirect to cookbook show page
+  end
 
   private
 

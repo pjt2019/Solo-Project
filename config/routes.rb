@@ -6,6 +6,6 @@ Rails.application.routes.draw do
     
   end
   resources :categories #, only: [:new, :create, :show] 
-
   resources :cookbooks, only: [:index, :create, :show]
+    post 'cookbook/:recipe', to: 'cookbooks#add_recipe', as: :add_recipe_to_cookbook
 end
