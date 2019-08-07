@@ -28,7 +28,7 @@
 
           <% if current_user %>
           <li class="nav-item">
-            <%= link_to 'My Cookbook', '#', class: 'nav-link' %>
+            <%= link_to 'My Cookbook', cookbooks_path(@cookbook), class: 'nav-link' %>
           </li>
 
             <% if current_user.is_author %>
