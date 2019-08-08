@@ -15,6 +15,9 @@
   <br />
   <br />
   <%if current_user %>
+  if current_user == @recipe.user
+
+
     <% unless current_user.cookbook.recipes.include?(@recipe) %>
       <div class="col-sm-4 col-12 text-center">
         <%= link_to 'Save to Cookbook', add_recipe_to_cookbook_path(@recipe), method: :post, class: 'btn btn-primary btn-large' %>
