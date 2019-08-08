@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   has_many :recipes
-  has_many :user_categories
-  has_many :user_recipes
+  has_many :user_categories, dependent: :destroy
+  has_many :user_recipes, dependent: :destroy
   has_many :categories
   has_many :categories, through: :user_categories
   has_one :cookbook
