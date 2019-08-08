@@ -2,24 +2,27 @@
 <div class="booyah-box col-10 offset-1">
   <h1 class="text-center"><%= @recipe.title %></h1>
   <br />
-
-  <div class="text-center">
-    <%= image_tag @recipe.photo.to_s, class: 'image' %>
-  </div>
-  <br />
-  <p class="text-center"><h5>Description:</h5><%= @recipe.description %></p>
-  <br />
-  <p class="text-center"><h5>Ingredient:</h5><%= @recipe.ingredient %></p>
-  <br />
-  <p class="text-center"><h5>Instruction:</h5><%= @recipe.instruction %></p>
-  <br />
-  <br />
-  <%if current_user %>
-  
-    <% unless current_user.cookbook.recipes.include?(@recipe) %>
-      <div class="col-sm-4 col-12 text-center">
-        <%= link_to 'Save to Cookbook', add_recipe_to_cookbook_path(@recipe), method: :post, class: 'btn btn-primary btn-large' %>
-      </div>
+    <div class="text-center">
+      <%= image_tag @recipe.photo.to_s, class: 'image' %>
+    </div>
+    <br />
+    <p class="text-center"><h5>Description:</h5><%= @recipe.description %></p>
+    <br />
+    <p class="text-center"><h5>Ingredient:</h5><%= @recipe.ingredient %></p>
+    <br />
+    <p class="text-center"><h5>Instruction:</h5><%= @recipe.instruction %></p>
+    <br />
+    <br />
+    <%if current_user %>
+      <% if current_user.is_author %> 
+        <div class="float-right">
+          <%= link_to 'Edit', edit_recipe_path(@recipe), class: 'btn btn-primary' %>     
+        </div> 
+        <% end %>
+        <% unless current_user.cookbook.recipes.include?(@recipe) %>
+          <div class="col-sm-4 col-12 text-center">
+            <%= link_to 'Save to Cookbook', add_recipe_to_cookbook_path(@recipe), method: :post, class: 'btn btn-primary btn-large' %>
+          </div>
+        <% end %>
     <% end %>
-  <% end %>
 </div>

@@ -28,6 +28,16 @@ class RecipesController < ApplicationController
     #redirect_to recipes_path(@recipe)
   end
 
+  def edit
+    @recipe = Recipe.find(params[:id])
+  end
+
+  def update
+    @recipe = Recipe.find(params[:id])
+    @recipe.update_attributes(recipe_params)
+    redirect_to category_path
+  end
+
 
   private
 
