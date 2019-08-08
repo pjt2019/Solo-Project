@@ -38,6 +38,12 @@ class RecipesController < ApplicationController
     redirect_to category_path
   end
 
+  def destroy
+    @recipe = Recipe.find(params[:id])
+    @recipe.destroy
+    redirect_to category_path(@recipe.categories.first)
+  end
+
 
   private
 
