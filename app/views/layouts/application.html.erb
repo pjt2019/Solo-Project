@@ -56,6 +56,7 @@
               <%= link_to 'Sign up', new_user_registration_path, class: 'nav-link' %>
             </li>
             <% end %>
+          </ul>
 
 
         <form class="form-inline my-2 my-lg-0">
@@ -82,10 +83,31 @@
 
     <div id="footer">
       <div class="container">
-        <b>Footer Here</b>
-        <br />
-        <%= link_to 'Link', '#' %>
+        <div class="row">
+          <div class="col-12 col-sm-4">
+          <b>Contact</b>
+          <br />         
+          <%= link_to 'my@email.com', '#' %>
+          </div>
+          <br />
+          <br />
+
+          <div class="col-12 col-sm-6">
+          <p>© 2019 yummies.com</p>
+          </div>
+
+          <div class="col-12 col-sm-2 social">
+          <b>Social</b>
+          <br />
+          <%= link_to 'https://github.com/PJToews' do %>
+          <span class="fa fa-github-square fa-2x social-button"></span>
+          <% end %>
+          <span class="fa fa-facebook-square fa-2x social-button"></span>
+          <span class="fa fa-twitter-square fa-2x social-button"></span>
+        </div>
+      </div>
       </div>
     </div>
+
   </body>
 </html>

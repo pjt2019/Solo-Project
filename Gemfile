@@ -71,6 +71,7 @@ gem 'simple_form'
 gem 'carrierwave', '>= 2.0.0.rc', '< 3.0'
 gem "figaro"
 gem "fog-aws"
+gem "font-awesome-rails"
 
 
 source 'https://rails-assets.org' do
