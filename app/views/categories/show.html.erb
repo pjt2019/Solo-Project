@@ -9,7 +9,7 @@
   <div class="col-12 col-md-4">
     <%= link_to recipe_path(r) do %>
     <%= image_tag r.photo.to_s, class: 'image' %>
-    <p><%= link_to r.title %></p>
+    <p><%= r.title %></p>
     <% end %>
     <br />
     </div>
