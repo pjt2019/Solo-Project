@@ -40,8 +40,9 @@ class RecipesController < ApplicationController
 
   def destroy
     @recipe = Recipe.find(params[:id])
+    category_id = @recipe.categories.first.id
     @recipe.destroy
-    redirect_to category_path(@recipe.categories.first)
+    redirect_to category_path(category_id)
   end
 
 
